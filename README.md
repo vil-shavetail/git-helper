@@ -77,3 +77,20 @@ git log --oneline
 ```
 ## HEAD — всему голова:
 Файл HEAD (англ. «голова», «головной») — один из служебных файлов папки .git. Он указывает на коммит, который сделан последним (то есть на самый новый).
+
+---
+
+## Статусы untracked/tracked, staged и modified
+
+```mermaid
+graph LR;
+  created file --> untracked; 
+  untracked -- "git add" --> staged(+ tracked);
+  staged    -- "modified file" --> staged, modified(+ tracked);
+  modified  -- "git add again" --> staged(+ tracked);
+  staged    -- "git commit"    --> tracked;
+  tracked   -- "modified file" --> modified(+ tracked);
+  modified  -- "git add" --> staged(+ tracked);
+  staged    -- "git commit" --> tracked;
+ 
+``` 
