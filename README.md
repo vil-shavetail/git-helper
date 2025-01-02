@@ -85,11 +85,11 @@ git log --oneline
 ```mermaid
 graph LR;
   created_file --> untracked; 
-  untracked -- "git add"       --> staged(+ tracked);
-  staged    -- "modified file" --> staged/modified(+ tracked);
-  modified  -- "git add again" --> staged(+ tracked);
+  untracked -- "git add"       --> staged(+tracked);
+  staged    -- "modified file" --> staged/modified(+tracked);
+  modified  -- "git add again" --> staged(+tracked);
   staged    -- "git commit"    --> tracked;
-  tracked   -- "modified file" --> modified(+ tracked);
-  modified  -- "git add"       --> staged(+ tracked);
+  tracked   -- "modified file" --> modified(+tracked);
+  modified  -- "git add"       --> staged(+tracked);
   staged    -- "git commit"    --> tracked; 
 ``` 
